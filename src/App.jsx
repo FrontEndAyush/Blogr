@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
+import FeaturesPageTwo from "./components/FeaturesPageTwo";
+import FeaturesPageThree from "./components/FeaturesPageThree";
 function App() {
   return (
     <>
@@ -10,6 +12,8 @@ function App() {
         <Hero></Hero>
       </div>
       <Features></Features>
+      <FeaturesPageTwo></FeaturesPageTwo>
+      <FeaturesPageThree></FeaturesPageThree>
     </>
   );
 }

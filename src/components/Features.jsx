@@ -7,7 +7,7 @@ const Features = () => {
         Designed for the future
       </h1>
       <div className="flex flex-wrap lg:flex-nowrap -mb-10 flex-col-reverse lg:flex-row">
-        <div className="mt-[100px] divOne p-5">
+        <div className="lg:mt-[100px] divOne p-5">
           <h1 className="text-2xl  text-center lg:text-left font-semibold mb-4">
             Introducing an extensible editor
           </h1>
