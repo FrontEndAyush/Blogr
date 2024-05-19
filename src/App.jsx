@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Features from "./components/Features";
 import FeaturesPageTwo from "./components/FeaturesPageTwo";
 import FeaturesPageThree from "./components/FeaturesPageThree";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       <Features></Features>
       <FeaturesPageTwo></FeaturesPageTwo>
       <FeaturesPageThree></FeaturesPageThree>
+      <Footer></Footer>
     </>
   );
 }
