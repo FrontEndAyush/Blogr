@@ -3,14 +3,22 @@ import { useState } from "react";
 
 const Navbar = () => {
   let [dropDownMenuNum, setDropDownMenuNum] = useState(0);
-  let [showMenu, setShowMenu] = useState(true);
+  let [showDropDownInMobile, setShowDropDownInMobile] = useState(0);
+  let [showMenu, setShowMenu] = useState(false);
 
   function showDropDownMenu(num) {
-    console.log(num);
     if (dropDownMenuNum === num) {
       setDropDownMenuNum(0);
     } else {
       setDropDownMenuNum(num);
+    }
+  }
+
+  function showDroppDownMenuInMobileDevices(num) {
+    if (showDropDownInMobile === num) {
+      setShowDropDownInMobile(0);
+    } else {
+      setShowDropDownInMobile(num);
     }
   }
   return (
@@ -59,23 +67,40 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-
         {/* this is hamburger icon img tag */}
-        <img
-          src="/images/icon-hamburger.svg"
-          className="block lg:hidden"
-          alt=""
-        />
+        {showMenu === true ? (
+          <>
+            <img src="/images/icon-close.svg" onClick={() => setShowMenu(false)} alt="" />
+          </>
+        ) : (
+          <img
+            src="/images/icon-hamburger.svg"
+            className="block lg:hidden"
+            alt=""
+            onClick={() => setShowMenu(true)}
+          />
+        )}
 
-        {/* menu for mobile device  */}
-        <div className={` ${showMenu === true ? "block" : "hidden"} hidden`}>
+        {/* menu for mobile device */}
+        <div
+          className={` ${
+            showMenu === true ? "block" : "hidden"
+          }  absolute z-[50] md:right-[300px] right-[350px]`}
+        >
           <div
-            className={`absolute top-[50px]  z-[999px] flex  border bg-white min-h-[300px] rounded-lg w-[300px] left-[50px]`}
+            className={`absolute top-[50px]  z-[999px] flex py-5  border bg-white min-h-[200px] rounded-lg w-[300px] left-[50px]`}
           >
             <ul className="flex gap-3 cursor-pointer px-[120px] font-semibold   mt-5 flex-col mx-auto">
-              <li className="flex items-center">Product </li>
+              <li
+                className="flex items-center"
+                onClick={() => showDroppDownMenuInMobileDevices(1)}
+              >
+                Product{" "}
+              </li>
               <div
-                className={`w-[120px] hidden  text-center mr-10 cursor-pointer rounded-lg  bg-gray-200 h-[130px] border border-white     `}
+                className={`w-[120px] relative right-[28px] text-center  cursor-pointer rounded-lg  bg-gray-200 h-[130px] border border-white ${
+                  showDropDownInMobile == 1 ? "block" : "hidden"
+                }    `}
               >
                 <h1 className="hover:font-semibold mt-1 duration-300">
                   Contact
@@ -88,40 +113,64 @@ const Navbar = () => {
                 </h1>
               </div>
 
-              <li className="flex items-center">
+              <li
+                className="flex items-center"
+                onClick={() => showDroppDownMenuInMobileDevices(2)}
+              >
                 Company{" "}
-                <span>
-                  <img
-                    src="/images/icon-arrow-light.svg"
-                    className="mt-1 ml-1"
-                    alt=""
-                  />
-                </span>
               </li>
-              <li className="flex items-center">
+              <div
+                className={`w-[120px]  relative right-[28px] text-center  cursor-pointer rounded-lg  bg-gray-200 h-[130px] border border-white  ${
+                  showDropDownInMobile == 2 ? "block" : "hidden"
+                }    `}
+              >
+                <h1 className="hover:font-semibold mt-1 duration-300">
+                  Contact
+                </h1>
+                <h1 className="hover:font-semibold mt-1 duration-300">
+                  Newsletter
+                </h1>
+                <h1 className="hover:font-semibold mt-1 duration-300">
+                  Linkdin
+                </h1>
+              </div>
+
+              <li
+                className="flex items-center"
+                onClick={() => showDroppDownMenuInMobileDevices(3)}
+              >
                 Connect{" "}
-                <span>
-                  <img
-                    src="/images/icon-arrow-light.svg"
-                    className="mt-1 ml-1"
-                    alt=""
-                  />
-                </span>
               </li>
+              <div
+                className={`w-[120px]  relative right-[28px] text-center  cursor-pointer rounded-lg  bg-gray-200 h-[130px] border border-white  ${
+                  showDropDownInMobile == 3 ? "block" : "hidden"
+                }    `}
+              >
+                <h1 className="hover:font-semibold mt-1 duration-300">
+                  Contact
+                </h1>
+                <h1 className="hover:font-semibold mt-1 duration-300">
+                  Newsletter
+                </h1>
+                <h1 className="hover:font-semibold mt-1 duration-300">
+                  Linkdin
+                </h1>
+              </div>
+
+              {/* signup and login button for mobile devices */}
+              <div className=" relative right-[30px]  ">
+                <button className=" ml-[45px]  font-bold mb-1 ">Login</button>
+                <br />
+                <button className="px-[50px]   bg-[#ea5032]   font-bold text-[white] border-2 py-2 rounded-full">
+                  Sign Up
+                </button>
+              </div>
             </ul>
             <hr />
-
-            <div className="   z-[999px] relative top-[100px]   right-[200px]">
-              <button className="mr-5 ml-[50px]  font-bold mb-1 ">Login</button>
-              <br />
-              <button className="px-10 bg-[#ea5032] z-50 relative  font-bold text-[white] border-2 py-2 rounded-full">
-                Sign Up
-              </button>
-            </div>
           </div>
         </div>
 
-        {/* for desktop  */}
+        {/* for desktop signup and desktop button */}
         <div className="hidden lg:block">
           <button className="mr-5 ">Login</button>
           <button className="px-6 bg-white font-bold text-[#ea5032] border-2 py-2 rounded-full">
