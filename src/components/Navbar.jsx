@@ -34,12 +34,26 @@ const Navbar = () => {
               >
                 Product{" "}
                 <span>
-                  <img
-                    src="/images/icon-arrow-light.svg"
-                    className="mt-1 ml-1"
-                    alt=""
-                    onClick={() => showDropDownMenu(1)}
-                  />
+                  {showDropDownMenu !== 1 ? (
+                    <>
+                      <img
+                        src="/images/icon-arrow-light.svg"
+                        className="mt-1 ml-1"
+                        alt=""
+                        onClick={() => showDropDownMenu(1)}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      <img
+                        src="/images/icon-arrow-dark.svg"
+                        alt=""
+                        className="mt-1 ml-1 rotate-180"
+                        onClick={() => showDropDownMenu(0)}
+                      />
+                    </>
+                  )}
                 </span>
               </li>
               <li className="flex items-center">
@@ -70,7 +84,11 @@ const Navbar = () => {
         {/* this is hamburger icon img tag */}
         {showMenu === true ? (
           <>
-            <img src="/images/icon-close.svg" onClick={() => setShowMenu(false)} alt="" />
+            <img
+              src="/images/icon-close.svg"
+              onClick={() => setShowMenu(false)}
+              alt=""
+            />
           </>
         ) : (
           <img

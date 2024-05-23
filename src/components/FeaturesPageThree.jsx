@@ -2,13 +2,13 @@ import React from "react";
 
 const FeaturesPageThree = () => {
   return (
-    <div className=" container lg:py-0 py-[150px]  mr-auto">
+    <div className=" container lg:py-0 py-[150px] mx-auto lg:mx-0 lg:mr-auto">
       <div className="flex flex-wrap lg:flex-nowrap text-center px-6 lg:px-0 lg:text-left items-center">
         <div>
           <img src="/images/illustration-laptop-desktop.svg" className="w-[100vw] lg:relative -left-[150px] overflow-x-hidden" alt="" />
         </div>
 
-        <div className = "lg:relative -left-[100px]">
+        <div className = "lg:relative mt-10 -left-[100px]">
           <h1 className="mb-3 text-2xl font-semibold">Free,open,simple</h1>
           <p className="lg:w-[600px] ">
             {" "}

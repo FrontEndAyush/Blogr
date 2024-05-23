@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="w-[80vw] text-center absolute font-semibold text-white mx-auto left-[45px] top-[150px] lg:top-[250px] lg:left-[160px]">
+    <section className="w-[80vw] text-center absolute font-semibold text-white mx-auto left-[45px] top-[150px] md:top-[200px] md:left-[100px] lg:top-[250px] lg:left-[160px]">
       <h1 className="lg:text-7xl mb-10 text-3xl "> A modern publishing platform</h1>
       <p className=" text-xl text-[#FFCFC8]">
         Grow your audience build your online brand

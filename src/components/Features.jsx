@@ -2,11 +2,11 @@ import React from "react";
 
 const Features = () => {
   return (
-    <div className="h-[100vh] container py-20 ml-auto">
+    <div className="h-[100vh] container py-20 mx-auto lg:ml-auto">
       <h1 className=" lg:text-[30px] text-[20px]  text-center font-semibold mb-4  lg:mb-0 lg:absolute left-[660px]">
         Designed for the future
       </h1>
-      <div className="flex flex-wrap md:flex-nowrap -mb-10 flex-col-reverse md:flex-row">
+      <div className="flex flex-wrap lg:flex-nowrap -mb-10 flex-col-reverse lg:flex-row">
         <div className="lg:mt-[100px] divOne p-5">
           <h1 className="text-2xl  text-center lg:text-left font-semibold mb-4">
             Introducing an extensible editor
